@@ -828,4 +828,7 @@
   <!-- Remove unused AOSP repos -->
   <include name="snippets/remove.xml" />
 
+  <!-- Source Changes -->
+  <include name="snippets/mido.xml" />
+
 </manifest>

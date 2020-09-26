@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Repositories -->
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote name="mido"
+          fetch="https://github.com/AOSP-mido/"
+          revision="refs/heads/android-11" />
+
+
+  <!-- Source -->
+  <project name="platform_bootable_recovery" path="bootable/recovery" remote="mido" revision="android-11" />
+  <project name="platform_build_make" path="build/make" remote="mido" revision="android-11" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project name="platform_build_soong" path="build/soong" remote="mido" revision="android-11" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project name="platform_external_selinux" path="external/selinux" remote="mido" revision="android-11" />
+  <project name="platform_external_tinycompress" path="external/tinycompress" remote="mido" revision="android-11" />
+  <project name="platform_frameworks_av" path="frameworks/av" remote="mido" revision="android-11" />
+  <project name="platform_frameworks_base" path="frameworks/base" remote="mido" revision="android-11" />
+  <project name="platform_frameworks_native" path="frameworks/native" remote="mido" revision="android-11" />
+  <project name="platform_hardware_libhardware" path="hardware/libhardware" remote="mido" revision="android-11" />
+  <project name="platform_packages_apps_Launcher3" path="packages/apps/Launcher3" remote="mido" revision="android-11" />
+  <project name="platform_packages_apps_Settings" path="packages/apps/Settings" remote="mido" revision="android-11" />
+  <project name="platform_packages_apps_SettingsIntelligence" path="packages/apps/SettingsIntelligence" remote="mido" revision="android-11" />
+  <project name="platform_prebuilts_abi-dumps_vndk" path="prebuilts/abi-dumps/vndk" remote="mido" revision="android-11" />
+  <project name="platform_platform_testing" path="platform_testing" remote="mido" revision="android-11" />
+  <project name="platform_system_core" path="system/core" remote="mido" revision="android-11" />
+  <project name="platform_vendor_qcom_opensource_dataservices" path="vendor/qcom/opensource/dataservices" remote="mido" revision="android-11" />
+  <project name="platform_vendor_qcom_opensource_interfaces" path="vendor/qcom/opensource/interfaces" remote="mido" revision="android-11" />
+  <project name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" path="vendor/qcom/opensource/data-ipa-cfg-mgr" remote="mido" revision="android-11" />
+  <project name="platform_device_qcom_sepolicy-legacy-um" path="device/qcom/sepolicy-legacy-um" remote="mido" revision="android-11" />
+  <project name="platform_vendor_qcom_opensource_cryptfs_hw" path="vendor/qcom/opensource/cryptfs_hw" remote="mido" revision="android-11" />
+  <project name="platform_system_bt" path="system/bt" remote="mido" revision="android-11" />
+  <project name="platform_bionic" path="bionic" remote="mido" revision="android-11" />
+
+  <!-- HAL's -->
+  <project name="platform_hardware_qcom_display" path="hardware/qcom/display" remote="mido" revision="android-11" />
+  <project name="platform_hardware_qcom_audio" path="hardware/qcom/audio" remote="mido" revision="android-11" />
+  <project name="platform_hardware_qcom_media" path="hardware/qcom/media" remote="mido" revision="android-11" />  
+
+  <!-- device -->
+  <project name="platform_device_xiaomi_mido" path="device/xiaomi/mido" remote="mido" revision="android-11" />
+  <project name="platform_device_xiaomi_mido-kernel" path="device/xiaomi/mido-kernel" remote="mido" revision="android-11" />
+  <project name="platform_proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="mido" revision="android-11" />
+
+</manifest>
