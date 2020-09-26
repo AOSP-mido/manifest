@@ -831,4 +831,7 @@
   <!-- Source Changes -->
   <include name="snippets/mido.xml" />
 
+  <!-- LineageOS Repos -->
+  <include name="snippets/lineage.xml" />
+
 </manifest>
